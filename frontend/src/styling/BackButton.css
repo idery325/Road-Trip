@@ -1,0 +1,16 @@
+.back-button {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px; /* Match the size with your design */
+    height: 40px; /* Match the size with your design */
+    font-size: 24px; /* Adjust as per your design */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
+    position: absolute; /* Position it over the map */
+    left: 20px; /* Spacing from the left, adjust as needed */
+    top: 20px; /* Spacing from the top, adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
