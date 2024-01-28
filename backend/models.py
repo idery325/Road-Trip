@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+import datetime
 
 class Place(models.Model):
     name = models.CharField(max_length=255)
@@ -35,7 +35,7 @@ class MyList(models.Model):
 class Review(models.Model):
     title = models.CharField(max_length=255)
     post = models.TextField(null = True, blank = True)
-    date = models.DateField()
+    date = models.DateField(default=datetime.date.today)
 
     def __str__(self):
 	    return self.title
@@ -44,7 +44,7 @@ class Review(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=255)
     post = models.TextField(null = True, blank = True)
-    date = models.DateField()
+    date = models.DateField(default=datetime.date.today)
 
     def __str__(self):
 	    return self.title

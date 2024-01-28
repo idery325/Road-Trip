@@ -10,3 +10,4 @@ class MyAPIView(APIView):
         data = Place.objects.all()
         serializer = MySerializer(data, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
