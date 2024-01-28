@@ -7,7 +7,7 @@ const AddressBar = () => {
       <div className="address-details">
         <span className="address">2495 Bancroft Way</span>
         <span className="arrow">→</span>
-        <span className="address">405 Hilgard Ave</span>
+        <span className="address">UC LA</span>
       </div>
     </div>
   );

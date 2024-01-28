@@ -4,16 +4,26 @@ import Material from '../image/material-symbol.png';
 import Home from '../image/Home.png';
 import Pointer from '../image/Pointer.png';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function Search() {
     const [searchText, setSearchText] = useState('Where to?');
     const [showBoxes, setShowBoxes] = useState([true, true, true, true]); 
     const textStyle = searchText === 'UCLA' ? { fontFamily: 'search-font1', color: 'black'} : null;
+    
+    const navigate = useNavigate();
 
+    const handleMingcuteBarClick = () => {
+        navigate("/MapInterface");
+  };
 
     const handleClickBoxFour = () => {
         setSearchText('UCLA');
         setShowBoxes([false, false, true, true]); 
+
+        handleMingcuteBarClick();
     };
 
     return (

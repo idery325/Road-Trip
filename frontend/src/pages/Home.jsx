@@ -6,16 +6,22 @@ import Airport from '../image/airport.png';
 import Home1 from '../image/home1.png';
 import Plan from '../image/plan.png';
 import Account from '../image/account.png';
+import { useNavigate } from 'react-router-dom';
+
 
 function Home() {
+    let navigate = useNavigate();
 
+    const handleMingcuteBarClick = () => {
+        navigate("/search");
+  };
 
     return (
         <div className="home1">
             <div className='title-font'>Plan your <span className='road-trip'>Road Trip </span> from Berkeley</div>
 
-            <div className='mingcute-bar'>
-
+            <div className='mingcute-bar' onClick={handleMingcuteBarClick}>
+      
                 <img src={Mingcute} className='mingcute' alt="Arrow" />
                 <div className='search-font2' >Enter destination</div>
             </div>

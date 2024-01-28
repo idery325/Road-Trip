@@ -1,4 +1,6 @@
 .address-bar {
+    width: 340px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center; /* Center the children horizontally */
@@ -6,8 +8,6 @@
     padding: 8px 16px; /* Reduced padding */
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    width: auto; /* Adjust width as needed, or remove for auto width */
-    max-width: 85%; /* Maximum width can be adjusted as needed */
     position: absolute;
     top: 20px;
     left: 50%;
@@ -29,7 +29,7 @@
   
   .address {
     margin: 0 5px;
-    font-weight: bold;
+    font-weight: 400;
     white-space: nowrap; /* Prevent text from wrapping */
   }
   
