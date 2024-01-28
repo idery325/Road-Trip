@@ -1,0 +1,104 @@
+.App {
+  text-align: center;
+}
+
+.search-container {
+  margin: 20px;
+}
+
+ul{
+  display: flex;
+}
+
+li{
+  margin-right: 20px;
+  list-style: none;
+}
+
+.guide-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guide-item {
+  margin: 10px;
+}
+
+.image-container img {
+  width: 100px; 
+  height: auto;
+}
+
+.destination span{
+  margin-right: 20px;
+}
+
+.navigation-bar button {
+  margin: 10px;
+  padding: 10px;
+}
+
+.destination h3,
+.destination p {
+  position: relative;
+  z-index: 2;
+}
+
+.destination h3 {
+  margin-top: 140px;
+  margin-bottom: 5px; /* Space between the title and the subtitle */
+}
+
+.destination p {
+  margin-top: 0;
+}
+
+
+.destination-list {
+  display: flex; /* Makes items line up horizontally */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.destination-list::-webkit-scrollbar {
+  display: none;
+}
+
+.destination {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  flex: 0 0 auto; /* This ensures that the items don't shrink and are laid out as inline blocks within the flex container */
+  margin-right: 20px; /* Adjust as needed for spacing between items */
+  background-size: cover; /* This ensures that the background covers the entire div */
+  background-position: center; /* This centers the image in the div */
+  color: white; /* Assuming you want white text over your image */
+  padding: 20px; /* Add padding as needed */
+  position: relative;
+}
+
+.yosemite{
+  background-image: url('./yosemite-2-scaled.jpg'); /* Update the path according to your project structure */
+}
+.las-vegas{
+  background-image: url('./las-vegas.jpg');
+}
+
+.destination::after {
+  content: '';
+  position: absolute;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Black with 30% opacity */
+  z-index: 1;
+}
+
+.destination > * {
+  position: relative;
+  z-index: 2;
+}

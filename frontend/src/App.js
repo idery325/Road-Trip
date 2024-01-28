@@ -1,65 +1,70 @@
-/* import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Footer from './Footer.js';
+import RecentSearches from './RecentSearch.js';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  // State to track which tab is active
+  const [activeTab, setActiveTab] = useState('recommended');
 
-*/
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    // 데이터를 가져올 API 엔드포인트
-    const apiUrl = 'http://localhost:8000/api/';
-
-    // 데이터를 가져오는 함수
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(apiUrl);
-        setData(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    // fetchData 함수 호출 (컴포넌트가 마운트될 때 한 번만 호출)
-    fetchData();
-  }, []);
+  // Function to handle tab click
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Data from Django:</h1>
-        <ul>
-          {data.map(item => (
-            <li key={item.id}>{item.data_field}</li>
-          ))}
-        </ul>
+    <div className="app">
+      <header className="app-header">
+        <h1>Plan your Road Trip from Berkeley</h1>
+        <div className="search-container">
+          <input type="text" placeholder="Enter destination" />
+        </div>
       </header>
+      
+      <section className="weekend-getaway">
+        <nav>
+          <ul className='click-bar'>
+            <li 
+              style={{
+                color: activeTab === 'recommended' ? 'skyblue' : 'black',
+                cursor: 'pointer',
+              }}
+              onClick={() => handleTabClick('recommended')}
+              onMouseOver={(e) => e.target.style.color = 'skyblue'}
+              onMouseOut={(e) => e.target.style.color = activeTab === 'recommended' ? 'skyblue' : 'black'}
+            >
+              Recommended
+            </li>
+            <li>
+              Local approved
+            </li>
+            <li>
+              Most liked
+            </li>
+          </ul>
+        </nav>
+        {activeTab === 'recommended' && (
+          <div className="destination-list">
+            <div className="destination yosemite">
+              <span role="img" aria-label="like">👍 200</span>
+              <span role="img" aria-label="heart">❤️ 136</span>
+              <h3>Yosemite National Park</h3>
+              <p>12.9 mi (3.6 km)</p>
+            </div>
+            <div className="destination las-vegas">
+              <span role="img" aria-label="like">👍 200</span>
+              <span role="img" aria-label="heart">❤️</span>
+              <h3>Las Vegas Main Strip</h3>
+              <p>12.9 mi (3.6 km)</p>
+            </div>
+          </div>
+        )}
+        <RecentSearches />
+      </section>
+      <Footer />
+
     </div>
   );
 }
 
 export default App;
-

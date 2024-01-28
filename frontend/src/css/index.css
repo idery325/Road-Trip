@@ -1,0 +1,69 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; /* for better font rendering */
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff; /* Assuming a white background ç/
+  color: #333; /* Default text color */
+}
+
+/* Media query for iPhone 12 */
+@media only screen 
+  and (min-device-width: 390px) 
+  and (max-device-width: 844px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+  body {
+    font-size: 16px;
+  }
+
+
+  
+  /* Search Bar */
+  .App-header {
+    background-color: #F2F2F7; /* Light grey background */
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .search-container input[type="text"] {
+    width: calc(100% - 4rem); /* Full width with padding */
+    margin: 0 auto;
+    height: 36px; /* Height of the search bar */
+    padding-left: 1rem;
+    border-radius: 18px; /* Rounded borders */
+    border: none;
+    background-color: #fff; /* White background */
+  }
+
+  /* City Guide styles omitted for brevity */
+
+  /* Navigation Bar */
+  .navigation-bar {
+    bottom: env(safe-area-inset-bottom); /* For iPhone notch */
+    background-color: #FFFFFF; /* Assuming a white navigation bar */
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .navigation-bar button {
+    background-color: #FA383E; /* Red background */
+    color: #FFFFFF; /* White text */
+    border: none;
+    border-radius: 15px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+
+
+}
+
+

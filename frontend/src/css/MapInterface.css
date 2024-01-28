@@ -1,0 +1,77 @@
+.map-interface {
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.address-bar {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    background: white;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.back-button {
+    border: none;
+    background: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.address-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 1em;
+}
+
+.address-input input {
+    border: none;
+    margin: 0 0.5em;
+}
+
+.map-view {
+    /* Placeholder for the map view */
+    background: #e0e0e0;
+    height: 50%; /* Adjust based on your layout */
+}
+
+.trip-preferences {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    padding: 1em;
+    text-align: center;
+}
+
+.time-inputs {
+    display: flex;
+    justify-content: space-around;
+    margin: 1em 0;
+}
+
+.time-input {
+    background: #f0f0f0;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.time {
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.next-button {
+    background: #ff6f00; /* Example button color */
+    color: white;
+    border: none;
+    padding: 1em 2em;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
